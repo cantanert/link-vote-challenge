@@ -1,5 +1,5 @@
 <template>
-    <div class="item-submitter-wrapper">
+    <div class="item-submitter-wrapper" @click="greet">
         <div class="plus-wrapper">
             <span class="plus">+</span>
         </div>
@@ -11,7 +11,12 @@
 
 <script>
     export default {
-        name: "ItemSubmitter"
+        name: "ItemSubmitter",
+        methods: {
+            greet: function () {
+                this.$router.push('add')
+            }
+        }
     }
 </script>
 
@@ -28,6 +33,9 @@
         margin-top: 25px
         border-radius: 3px
         border: 1px solid $gray-box-background
+        cursor: pointer
+        &:hover
+            background-color: $gray-box-background
         .plus-wrapper
             background-color: $gray-box-background
             width: 100px

@@ -41,7 +41,7 @@
                 width: 100%
                 padding-bottom: 10px
         .title-wrapper
-            flex: 3
+            flex: 2
             display: flex
             justify-content: flex-end
             align-self: flex-end

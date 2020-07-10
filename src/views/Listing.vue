@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    import ContentArea from "../components/ContentArea";
+    import ContentArea from "../components/Listing/ContentArea";
     export default {
         name: "Listing",
         components: {ContentArea}
