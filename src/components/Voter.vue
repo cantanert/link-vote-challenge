@@ -1,7 +1,10 @@
 <template>
     <div class="voter-wrapper">
-        <div class="up-votter-wrapper"><button>Up vote</button></div>
-        <div class="down-voter-wrapper"><button>Donw vote</button></div>
+        <div class="up-votter-wrapper">
+            <button><b-icon-arrow-up-short/>Up vote</button></div>
+        <div class="down-voter-wrapper">
+            <button><b-icon-arrow-down-short/>Down vote</button>
+        </div>
     </div>
 </template>
 
@@ -22,8 +25,13 @@
             display: flex
             flex: 1
             button
+                display: flex
+                align-items: center
                 border: none
                 background-color: unset
                 color: $dark-gray
                 font-weight: 600
+                svg
+                    font-size: 2rem
+
 </style>
