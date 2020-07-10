@@ -1,10 +1,12 @@
 <template>
-    <p>Listing Page</p>
+    <ContentArea/>
 </template>
 
 <script>
+    import ContentArea from "../components/ContentArea";
     export default {
-        name: "Listing"
+        name: "Listing",
+        components: {ContentArea}
     }
 </script>
 

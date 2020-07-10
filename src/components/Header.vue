@@ -29,9 +29,11 @@
 </script>
 
 <style scoped lang="sass">
+    $header-border-dark-gray : #b4b4b4
+
     .header-wrapper
         display: flex
-        border-bottom: 1px solid #000
+        border-bottom: 1px solid $header-border-dark-gray
         font-size: 23px
         .logo-wrapper
             flex: 1
