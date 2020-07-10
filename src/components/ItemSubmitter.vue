@@ -22,7 +22,6 @@
 
     .item-submitter-wrapper
         display: flex
-        align-self: center
         width: 50%
         background-color: $gray-container-background
         padding: 10px
@@ -31,8 +30,8 @@
         border: 1px solid $gray-box-background
         .plus-wrapper
             background-color: $gray-box-background
-            width: 75px
-            height: 75px
+            width: 100px
+            height: 100px
             display: flex
             justify-content: center
             align-items: center

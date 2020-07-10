@@ -1,14 +1,16 @@
 <template>
     <div class="content-area">
         <ItemSubmitter/>
+        <ItemListerWrapper/>
     </div>
 </template>
 
 <script>
     import ItemSubmitter from "./ItemSubmitter";
+    import ItemListerWrapper from "./ItemListerWrapper";
     export default {
         name: "ContentArea",
-        components: {ItemSubmitter}
+        components: {ItemListerWrapper, ItemSubmitter}
     }
 </script>
 
@@ -16,5 +18,5 @@
     .content-area
         display: flex
         flex-direction: column
-        align-self: center
+        align-items: center
 </style>
