@@ -10,8 +10,6 @@
                 Challenge
             </p>
         </div>
-        <router-link to="/add">go to add</router-link>
-        <router-link to="/">go to listing</router-link>
     </div>
 </template>
 

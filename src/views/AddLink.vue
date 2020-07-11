@@ -1,10 +1,12 @@
 <template>
-    <p>add link page</p>
+    <AddForm/>
 </template>
 
 <script>
+    import AddForm from "../components/AddLink/AddForm";
     export default {
-        name: "AddLink"
+        name: "AddLink",
+        components: {AddForm}
     }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="item-submitter-wrapper" @click="greet">
+    <div class="item-submitter-wrapper" @click="goToAddLink">
         <div class="plus-wrapper">
             <span class="plus">+</span>
         </div>
@@ -13,7 +13,7 @@
     export default {
         name: "ItemSubmitter",
         methods: {
-            greet: function () {
+            goToAddLink: function () {
                 this.$router.push('add')
             }
         }
