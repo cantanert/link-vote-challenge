@@ -1,0 +1,43 @@
+<template>
+    <div v-show="visibility" class="toast-added">
+        <div><span>{{text}}</span> added.</div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "Toast",
+        props:['visibility','text']
+    }
+</script>
+
+<style scoped lang="sass">
+    $light-green: #dcf9d3
+    $dark-green: #5cae5c
+
+    .toast-added
+        position: relative
+        display: flex
+        justify-content: center
+        div
+            position: absolute
+            top: -25px
+            display: flex
+            align-items: center
+            justify-content: center
+            height: 50px
+            width: 50%
+            background-color: $light-green
+            color: green
+            border: 1px solid $dark-green
+            border-radius: 5px
+            font-weight: 100
+            -webkit-box-shadow: 0 0 10px 0 rgba(148,142,148,1)
+            -moz-box-shadow: 0 0 10px 0 rgba(148,142,148,1)
+            box-shadow: 0 0 10px 0 rgba(148,142,148,1)
+            span
+                font-weight: 900
+                text-transform: uppercase
+                margin-right: 5px
+
+</style>

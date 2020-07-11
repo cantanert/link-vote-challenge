@@ -29,6 +29,15 @@ export default new Vuex.Store({
         return item.id === payload
       });
       state.listedItems.splice(itemIndex,1);
+    },
+    itemAdder: (state, payload) => {
+      const item = {
+        id: 2,
+        title: payload.title,
+        url: payload.url,
+        point:0
+      };
+      state.listedItems.push(item);
     }
   },
   actions: {
