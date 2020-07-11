@@ -1,5 +1,7 @@
 <template>
-    <div class="item">
+    <div class="item"
+         @mouseover="isHovered = true"
+         @mouseleave="isHovered = false">
         <div class="item-point-wrapper">
             <span class="point">{{item.point}}</span>
             <span>POINTS</span>
@@ -11,15 +13,26 @@
             </div>
             <Voter/>
         </div>
+        <span class="remover" v-show="isHovered">
+            <b-icon icon="dash-circle-fill" variant="danger"/>
+        </span>
     </div>
 </template>
 
 <script>
     import Voter from "./Voter";
     export default {
+        data(){
+            return{
+                isHovered: false
+            }
+        },
         name: "Item",
         props: ['item'],
-        components: {Voter}
+        components: {Voter},
+        methods: {
+
+        }
     }
 </script>
 
@@ -33,6 +46,11 @@
         flex: 1
         margin-top: 15px
         margin-bottom: 20px
+        position: relative
+        &:hover
+            border-radius: 5px
+            border: 1px solid $gray-box-background
+            background-color: $gray-container-background
         .item-point-wrapper
             display: flex
             flex-direction: column
@@ -45,6 +63,7 @@
             border: 1px solid $pure-black
             border-radius: 5px
             line-height: 1.1
+            margin: 10px
             span.point
                 font-weight: 900
                 font-size: 30px
@@ -54,6 +73,7 @@
             flex: 1
             align-items: flex-start
             padding: 0 20px
+            margin: 10px
             justify-content: space-between
             .item-info
                 display: flex
@@ -65,5 +85,11 @@
                 .item-name
                     font-size: 25px
                     font-weight: 700
+        .remover
+            position: absolute
+            top: -10px
+            right: -7px
+            cursor: pointer
+
 
 </style>
