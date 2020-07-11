@@ -13,26 +13,36 @@
             </div>
             <Voter :item="item"/>
         </div>
-        <span class="remover" v-show="isHovered" @click="removeItem(item.id)">
+        <span class="remover" v-show="isHovered" @click="isModalOpen=true">
             <b-icon icon="dash-circle-fill" variant="danger"/>
         </span>
+        <Modal v-show="isModalOpen"
+               :title="item.title"
+               @deleteDeclined="closeModal"
+               @deleteApproved="removeItem(item.id)"/>
     </div>
 </template>
 
 <script>
     import Voter from "./Voter";
+    import Modal from "../Modal";
     export default {
         data(){
             return{
-                isHovered: false
+                isHovered: false,
+                isModalOpen: false
             }
         },
         name: "Item",
         props: ['item'],
-        components: {Voter},
+        components: {Modal, Voter},
         methods: {
             removeItem(itemId){
-                this.$store.commit('itemRemover',itemId)
+                this.$store.commit('itemRemover',itemId);
+                this.closeModal();
+            },
+            closeModal(){
+              this.isModalOpen = false;
             }
         },
         computed: {
