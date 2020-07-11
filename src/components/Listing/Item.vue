@@ -1,13 +1,13 @@
 <template>
     <div class="item">
         <div class="item-point-wrapper">
-            <span class="point">6</span>
+            <span class="point">{{item.point}}</span>
             <span>POINTS</span>
         </div>
         <div class="item-details-wrapper">
             <div class="item-info">
-                <div class="item-name">Hacker News</div>
-                <div class="item-address">(https://news.ycombinator.com)</div>
+                <div class="item-name">{{item.title}}</div>
+                <div class="item-address">{{item.url}}</div>
             </div>
             <Voter/>
         </div>
@@ -18,6 +18,7 @@
     import Voter from "./Voter";
     export default {
         name: "Item",
+        props: ['item'],
         components: {Voter}
     }
 </script>

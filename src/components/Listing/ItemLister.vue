@@ -1,17 +1,21 @@
 <template>
     <div class="item-lister">
-        <Item/>
-        <Item/>
-        <Item/>
-        <Item/>
+        <Item  v-for="(item,index) in listedItems" :item='item' :key="index"/>
     </div>
 </template>
 
 <script>
     import Item from "./Item";
+    import { mapGetters } from 'vuex'
+
     export default {
         name: "ItemLister",
-        components: {Item}
+        components: {Item},
+        computed: {
+            ...mapGetters("LinkVotesModule",{
+                listedItems: "listedItemsGetter"
+            })
+        },
     }
 </script>
 

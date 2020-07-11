@@ -54,4 +54,8 @@
             flex: 1
             font-weight: 900
             font-size: 30px
+
+    @media screen and (max-width: 767px)
+        .item-submitter-wrapper
+            width: 100%
 </style>

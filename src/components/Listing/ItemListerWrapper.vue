@@ -22,4 +22,8 @@
         margin-top: 25px
         padding: 15px 10px
         border-top: 3px solid $gray-box-background
+
+    @media screen and (max-width: 767px)
+        .item-lister-wrapper
+            width: 100%
 </style>
