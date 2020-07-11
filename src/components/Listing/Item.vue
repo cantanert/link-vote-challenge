@@ -13,7 +13,7 @@
             </div>
             <Voter/>
         </div>
-        <span class="remover" v-show="isHovered">
+        <span class="remover" v-show="isHovered" @click="removeItem(item.id)">
             <b-icon icon="dash-circle-fill" variant="danger"/>
         </span>
     </div>
@@ -31,6 +31,11 @@
         props: ['item'],
         components: {Voter},
         methods: {
+            removeItem(itemId){
+                this.$store.commit('itemRemover',itemId)
+            }
+        },
+        computed: {
 
         }
     }

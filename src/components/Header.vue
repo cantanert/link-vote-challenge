@@ -7,7 +7,7 @@
             <p class="title">
                 <span class="link">Link</span>
                 <span class="vote">VOTE</span>
-                {{mappedSampleState}}
+                Challenge
             </p>
         </div>
         <router-link to="/add">go to add</router-link>
@@ -16,14 +16,10 @@
 </template>
 
 <script>
-    import {mapGetters} from 'vuex';
-
     export default {
         name: "Header",
         computed: {
-            ...mapGetters('LinkVotesModule',{
-                mappedSampleState: 'sampleStateGetter'
-            })
+
         }
     }
 </script>
