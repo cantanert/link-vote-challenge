@@ -1,16 +1,25 @@
 <template>
     <div class="voter-wrapper">
         <div class="up-votter-wrapper">
-            <button><b-icon-arrow-up-short/>Up vote</button></div>
+            <button @click="upVoteHandler(item.id)"><b-icon-arrow-up-short/>Up vote</button></div>
         <div class="down-voter-wrapper">
-            <button><b-icon-arrow-down-short/>Down vote</button>
+            <button v-show="item.point > 0" @click="downVoteHandler(item.id)"><b-icon-arrow-down-short/>Down vote</button>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Voter"
+        name: "Voter",
+        props: ['item'],
+        methods:{
+            upVoteHandler(itemId){
+                this.$store.commit('upVoter', itemId)
+            },
+            downVoteHandler(itemId){
+                this.$store.commit('downVoter', itemId)
+            }
+        }
     }
 </script>
 

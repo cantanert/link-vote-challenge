@@ -14,7 +14,6 @@ export default new Vuex.Store({
     },
     isEmpty(state){
       return !state.listedItems.length;
-
     }
   },
   mutations: {
@@ -32,13 +31,23 @@ export default new Vuex.Store({
         url: payload.url,
         point:0
       };
-      state.listedItems.push(item);
+      state.listedItems.unshift(item);
       setLocalStorage(state.listedItems);
     },
     loadFromLocalStorage: (state, payload) => {
       if (payload){
         state.listedItems = JSON.parse(payload);
       }
+    },
+    upVoter: (state,itemId) => {
+      state.listedItems.forEach((item) => {
+        if (item.id === itemId) item.point++
+      });
+    },
+    downVoter: (state,itemId) => {
+      state.listedItems.forEach((item) => {
+        if (item.id === itemId && item.point>0) item.point--
+      });
     }
   },
   actions: {

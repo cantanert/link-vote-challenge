@@ -11,7 +11,7 @@
                 <div class="item-name">{{item.title}}</div>
                 <div class="item-address">{{item.url}}</div>
             </div>
-            <Voter/>
+            <Voter :item="item"/>
         </div>
         <span class="remover" v-show="isHovered" @click="removeItem(item.id)">
             <b-icon icon="dash-circle-fill" variant="danger"/>

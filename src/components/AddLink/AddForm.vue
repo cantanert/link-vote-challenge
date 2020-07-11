@@ -68,12 +68,12 @@
         justify-content: center
         .add-form
             font-weight: 700
-            cursor: pointer
             width: 50%
             justify-content: flex-start
 
 
             .return-link
+                cursor: pointer
                 margin-top: 25px
                 display: flex
                 svg
