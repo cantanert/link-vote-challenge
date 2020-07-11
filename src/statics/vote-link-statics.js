@@ -1,3 +1,7 @@
 export default {
-    localStorageName: 'listedItems'
+    localStorageName: 'listedItems',
+    orderEnums: {
+        LESS: 'LESS',
+        MOST: 'MOST'
+    }
 }

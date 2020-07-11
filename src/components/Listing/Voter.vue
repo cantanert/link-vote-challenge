@@ -14,10 +14,10 @@
         props: ['item'],
         methods:{
             upVoteHandler(itemId){
-                this.$store.commit('upVoter', itemId)
+                this.$store.dispatch('upVoter', itemId)
             },
             downVoteHandler(itemId){
-                this.$store.commit('downVoter', itemId)
+                this.$store.dispatch('downVoter', itemId)
             }
         }
     }
