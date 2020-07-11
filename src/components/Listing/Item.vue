@@ -19,7 +19,7 @@
         <Modal v-show="isModalOpen"
                :title="item.title"
                @deleteDeclined="closeModal"
-               @deleteApproved="removeItem(item.id)"/>
+               @deleteApproved="removeItem(item.id, item.title)"/>
     </div>
 </template>
 
@@ -37,8 +37,9 @@
         props: ['item'],
         components: {Modal, Voter},
         methods: {
-            removeItem(itemId){
+            removeItem(itemId, itemTitle){
                 this.$store.commit('itemRemover',itemId);
+                this.$emit('itemDeleted',itemTitle);
                 this.closeModal();
             },
             closeModal(){

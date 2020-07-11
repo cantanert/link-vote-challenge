@@ -1,13 +1,13 @@
 <template>
     <div v-show="visibility" class="toast-added">
-        <div><span>{{text}}</span> added.</div>
+        <div><span>{{text}}</span> {{action}}.</div>
     </div>
 </template>
 
 <script>
     export default {
         name: "Toast",
-        props:['visibility','text']
+        props:['visibility','text', 'action']
     }
 </script>
 
@@ -16,12 +16,11 @@
     $dark-green: #5cae5c
 
     .toast-added
-        position: relative
         display: flex
         justify-content: center
         div
-            position: absolute
-            top: -25px
+            position: fixed
+            top: 50px
             display: flex
             align-items: center
             justify-content: center

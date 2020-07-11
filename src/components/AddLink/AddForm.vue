@@ -1,7 +1,7 @@
 <template>
     <div class="add-form-wrapper">
         <div class="add-form">
-            <Toast :visibility="isSuccess" :text="addedItemsTitle"/>
+            <Toast :visibility="isSuccess" :text="addedItemsTitle" :action="'added'"/>
             <p  class="return-link " @click="backToList"><b-icon icon="arrow-left-short"/>Return to List</p>
             <h2 class="form-title">Add New Link</h2>
             <div class="form-inputs">
