@@ -4,7 +4,7 @@
          @mouseleave="isHovered = false">
         <div class="item-point-wrapper">
             <span class="point">{{item.point}}</span>
-            <span>POINTS</span>
+            <span>{{statics.texts.points}}</span>
         </div>
         <div class="item-details-wrapper">
             <div class="item-info">
@@ -26,11 +26,14 @@
 <script>
     import Voter from "./Voter";
     import Modal from "../Modal";
+    import statics from '../../statics/vote-link-statics';
+
     export default {
         data(){
             return{
                 isHovered: false,
-                isModalOpen: false
+                isModalOpen: false,
+                statics: statics
             }
         },
         name: "Item",

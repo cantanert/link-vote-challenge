@@ -2,24 +2,31 @@
     <div class="custom-modal-overlay">
         <div class="custom-modal-container">
             <div class="custom-modal-header">
-                <span>Remove Link</span>
+                <span>{{statics.texts.removeLink}}</span>
                 <span @click="declineDeletion" class="closer-icon"><b-icon icon="x"/></span>
             </div>
             <div class="custom-modal-title">
-                Do you want to remove:
+                {{statics.texts.sureToRemove}}
                 <p>{{title}}</p>
             </div>
             <div class="custom-modal-actions">
-                <button @click="approveDeletion">OK</button>
-                <button @click="declineDeletion">CANCEL</button>
+                <button @click="approveDeletion">{{statics.buttons.ok}}</button>
+                <button @click="declineDeletion">{{statics.buttons.cancel}}</button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import statics from '../statics/vote-link-statics';
+
     export default {
         name: "Modal",
+        data(){
+          return {
+              statics : statics
+          }
+        },
         props: ['title'],
         methods: {
             approveDeletion(){

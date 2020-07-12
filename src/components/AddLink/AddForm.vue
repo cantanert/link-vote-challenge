@@ -2,15 +2,15 @@
     <div class="add-form-wrapper">
         <div class="add-form">
             <Toast :visibility="isSuccess" :text="addedItemsTitle" :action="'added'"/>
-            <p  class="return-link " @click="backToList"><b-icon icon="arrow-left-short"/>Return to List</p>
-            <h2 class="form-title">Add New Link</h2>
+            <ReturnLink :text="statics.texts.returnToList" url="/"/>
+            <h2 class="form-title">{{statics.texts.addNewLink}}</h2>
             <div class="form-inputs">
-                <p class="link-name-title" >Link Name:</p>
+                <p class="link-name-title" >{{statics.texts.linkName}}</p>
                 <input  v-model="title" placeholder="e.g Alphabet">
-                <p class="link-url-title">Link URL:</p>
+                <p class="link-url-title">{{statics.texts.linkUrl}}</p>
                 <input  v-model="url" placeholder="e.g http.//abc.xyz">
                 <div class="add-button-wrapper">
-                    <button @click="addEventHandler">ADD</button>
+                    <button @click="addEventHandler">{{statics.buttons.add}}</button>
                 </div>
             </div>
         </div>
@@ -19,21 +19,22 @@
 
 <script>
     import Toast from "../Toast";
+    import ReturnLink from "./ReturnLink";
+    import Statics from '../../statics/vote-link-statics'
+
     export default {
-        components: {Toast},
+        components: {ReturnLink, Toast},
         data(){
           return{
               title: '',
               url: '',
               addedItemsTitle:'',
-              isSuccess: false
+              isSuccess: false,
+              statics: Statics
           }
         },
         name: "AddForm",
         methods:{
-            backToList(){
-                this.$router.push('/')
-            },
             addEventHandler(){
                 // if(this.validateInputs()){
                     this.$store.commit('itemAdder',{
@@ -70,15 +71,6 @@
             font-weight: 700
             width: 50%
             justify-content: flex-start
-
-
-            .return-link
-                cursor: pointer
-                margin-top: 25px
-                display: flex
-                svg
-                    vertical-align: bottom
-                    font-size: 25px
             .form-title
                 display: flex
                 justify-self: flex-start

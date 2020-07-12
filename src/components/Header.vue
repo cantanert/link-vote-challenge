@@ -55,6 +55,6 @@
                 .logo
                     padding-bottom: 0
             .title-wrapper
-                font-size: 10px
+                font-size: 13px
 
 </style>

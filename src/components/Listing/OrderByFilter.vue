@@ -1,6 +1,6 @@
 <template>
     <div class="order-by-filter-wrapper">
-        <b-form-select v-model="selected" :options="options" @change="orderByHandler"></b-form-select>
+        <b-form-select v-model="selected" :options="options" @change="orderByHandler"/>
     </div>
 </template>
 
@@ -13,9 +13,9 @@
             return {
                 selected: null,
                 options: [
-                    { value: null, text: 'Order By', disabled: true },
-                    { value: voteLinkStatics.orderEnums.MOST, text: 'Most Voted (Z -> A)' },
-                    { value: voteLinkStatics.orderEnums.LESS, text: 'Less Voted (A -> Z)' }
+                    { value: null, text: voteLinkStatics.texts.orderBy, disabled: true },
+                    { value: voteLinkStatics.orderEnums.MOST, text: voteLinkStatics.texts.mostVoted},
+                    { value: voteLinkStatics.orderEnums.LESS, text: voteLinkStatics.texts.lessVoted}
                 ]
             }
         },

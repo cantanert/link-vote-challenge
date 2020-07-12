@@ -4,13 +4,19 @@
             <span class="plus">+</span>
         </div>
         <div class="submit-title-wrapper">
-            <span>SUBMIT A LINK</span>
+            <span>{{statics.buttons.submitLink}}</span>
         </div>
     </div>
 </template>
 
 <script>
+    import statics from '../../statics/vote-link-statics';
     export default {
+        data(){
+            return{
+                statics : statics
+            }
+        },
         name: "ItemSubmitter",
         methods: {
             goToAddLink: function () {

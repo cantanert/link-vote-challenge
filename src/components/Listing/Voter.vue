@@ -1,16 +1,24 @@
 <template>
     <div class="voter-wrapper">
         <div class="up-votter-wrapper">
-            <button @click="upVoteHandler(item.id)"><b-icon-arrow-up-short/>Up vote</button></div>
+            <button @click="upVoteHandler(item.id)"><b-icon-arrow-up-short/>{{statics.buttons.upVote}}</button>
+        </div>
         <div class="down-voter-wrapper">
-            <button v-show="item.point > 0" @click="downVoteHandler(item.id)"><b-icon-arrow-down-short/>Down vote</button>
+            <button @click="downVoteHandler(item.id)" v-show="item.point > 0"><b-icon-arrow-down-short />{{statics.buttons.downVote}}</button>
         </div>
     </div>
 </template>
 
 <script>
+    import statics from '../../statics/vote-link-statics';
+
     export default {
         name: "Voter",
+        data(){
+            return{
+                statics : statics
+            }
+        },
         props: ['item'],
         methods:{
             upVoteHandler(itemId){
