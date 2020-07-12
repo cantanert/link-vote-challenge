@@ -4,14 +4,14 @@
 
 <script>
     import ContentArea from "../components/Listing/ContentArea";
-    import statics from '../statics/vote-link-statics'
+    import enums from '../statics/enums'
     export default {
         name: "Listing",
         components: {ContentArea},
         beforeCreate() {
-            const loadedItems = JSON.parse(localStorage.getItem(statics.localStorageName));
+            const loadedItems = JSON.parse(localStorage.getItem(enums.localStorageName));
             if (loadedItems){
-                this.$store.commit('loadFromLocalStorage',loadedItems);
+                this.$store.commit(enums.mutations.loadFromLocalStorage,loadedItems);
             }
         }
     }

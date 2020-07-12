@@ -6,7 +6,7 @@
 
 <script>
     import voteLinkStatics from '../../statics/vote-link-statics'
-
+    import enums from '../../statics/enums';
     export default {
         name: "OrderByFilter",
         data() {
@@ -14,14 +14,14 @@
                 selected: null,
                 options: [
                     { value: null, text: voteLinkStatics.texts.orderBy, disabled: true },
-                    { value: voteLinkStatics.orderEnums.MOST, text: voteLinkStatics.texts.mostVoted},
-                    { value: voteLinkStatics.orderEnums.LESS, text: voteLinkStatics.texts.lessVoted}
+                    { value: enums.orderEnums.MOST, text: voteLinkStatics.texts.mostVoted},
+                    { value: enums.orderEnums.LESS, text: voteLinkStatics.texts.lessVoted}
                 ]
             }
         },
         methods:{
             orderByHandler(val){
-                this.$store.dispatch('orderByParam',val);
+                this.$store.dispatch(enums.actions.orderByParam,val);
             }
         }
     }

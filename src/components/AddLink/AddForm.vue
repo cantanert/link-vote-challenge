@@ -25,6 +25,7 @@
     import Toast from "../Toast";
     import ReturnLink from "./ReturnLink";
     import Statics from '../../statics/vote-link-statics'
+    import enums from '../../statics/enums'
 
     export default {
         components: {ReturnLink, Toast},
@@ -43,7 +44,7 @@
         methods:{
             addEventHandler(){
                 if(this.validateInputs()){
-                    this.$store.commit('itemAdder',{
+                    this.$store.commit(enums.mutations.itemAdder,{
                         title: this.title,
                         url: this.url
                     });

@@ -27,6 +27,7 @@
     import Voter from "./Voter";
     import Modal from "../Modal";
     import statics from '../../statics/vote-link-statics';
+    import enums from '../../statics/enums';
 
     export default {
         data(){
@@ -41,14 +42,14 @@
         components: {Modal, Voter},
         methods: {
             upVoteClicked(){
-                this.$store.dispatch('upVoter', this.item.id);
+                this.$store.dispatch(enums.actions.upVoter, this.item.id);
             },
             downVoteClicked(){
-                this.$store.dispatch('downVoter', this.item.id);
+                this.$store.dispatch(enums.actions.downVoter, this.item.id);
             },
             removeItem(itemId, itemTitle){
-                this.$store.commit('itemRemover',itemId);
-                this.$emit('itemDeleted',itemTitle);
+                this.$store.commit(enums.mutations.itemRemover,itemId);
+                this.$emit(enums.emits.itemDeleted,itemTitle);
                 this.closeModal();
             },
             closeModal(){

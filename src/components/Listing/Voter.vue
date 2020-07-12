@@ -11,6 +11,7 @@
 
 <script>
     import statics from '../../statics/vote-link-statics';
+    import enums from '../../statics/enums';
 
     export default {
         name: "Voter",
@@ -21,10 +22,10 @@
         },
         methods:{
             upVoteHandler(){
-                this.$emit('upVoted');
+                this.$emit(enums.emits.upVoted);
             },
             downVoteHandler(){
-                this.$emit('downVoted');
+                this.$emit(enums.emits.downVoted);
             }
         }
     }

@@ -1,9 +1,4 @@
 export default {
-    localStorageName: 'listedItems',
-    orderEnums: {
-        LESS: 'LESS',
-        MOST: 'MOST'
-    },
     texts:{
         returnToList: 'Return to List',
         addNewLink: 'Add New Link',

@@ -19,6 +19,7 @@
 
 <script>
     import statics from '../statics/vote-link-statics';
+    import enums from '../statics/enums';
 
     export default {
         name: "Modal",
@@ -30,10 +31,10 @@
         props: ['title'],
         methods: {
             approveDeletion(){
-                this.$emit('deleteApproved');
+                this.$emit(enums.emits.deleteApproved);
             },
             declineDeletion(){
-                this.$emit('deleteDeclined')
+                this.$emit(enums.emits.deleteDeclined)
             }
         }
     }

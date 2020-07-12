@@ -15,6 +15,7 @@
     import {mapGetters} from 'vuex';
     import Toast from "../Toast";
     import statics from '../../statics/vote-link-statics'
+    import enums from '../../statics/enums'
 
 
     export default {
@@ -29,7 +30,7 @@
         components: {Toast, Item},
         computed: {
             ...mapGetters({
-                listedItems: 'listedItemsGetter'
+                listedItems: enums.getters.listedItemsGetter
             }),
             isListEmpty(){
                 return this.listedItems.length === 0

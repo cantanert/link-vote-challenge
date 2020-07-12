@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import setLocalStorage from "../utils/setLocalStorage";
-import voteLinksStatics from '../statics/vote-link-statics';
+import enums from '../statics/enums';
 import swapper from "../utils/swapper";
 
 Vue.use(Vuex);
@@ -83,7 +83,7 @@ export default new Vuex.Store({
       context.commit('orderByMost');
     },
     orderByParam: (context, payload) => {
-      (payload === voteLinksStatics.orderEnums.LESS)
+      (payload === enums.orderEnums.LESS)
           ? context.commit('orderByLess')
           : context.commit('orderByMost')
     }

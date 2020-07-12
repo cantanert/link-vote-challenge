@@ -1,5 +1,5 @@
-import voteLinkStatics from "../statics/vote-link-statics";
+import enums from "../statics/enums";
 
 export default function (payload) {
-    localStorage.setItem(voteLinkStatics.localStorageName,JSON.stringify(payload));
+    localStorage.setItem(enums.localStorageName,JSON.stringify(payload));
 }
