@@ -1,10 +1,10 @@
 <template>
     <div class="item-lister">
-        <Toast :visibility="isToastOpen" :text="deletedItemTitle" :action="'deleted'"/>
+        <Toast :visibility="isToastOpen" :text="deletedItemTitle" :action="statics.texts.deleted"/>
         <Item v-for="(item,index) in listedItems"
               :item='item'
               :key="index"
-              @itemDeleted="openToast($event)"
+              @itemDeleted="itemDeleted($event)"
         />
         <p v-show="isListEmpty">There in no item exist.</p>
     </div>
@@ -14,25 +14,33 @@
     import Item from "./Item";
     import {mapGetters} from 'vuex';
     import Toast from "../Toast";
+    import statics from '../../statics/vote-link-statics'
+
 
     export default {
         data(){
             return {
                 isToastOpen: false,
-                deletedItemTitle: ''
+                deletedItemTitle: '',
+                statics: statics
             }
         },
         name: "ItemLister",
         components: {Toast, Item},
         computed: {
             ...mapGetters({
-                listedItems: 'listedItemsGetter',
-                isListEmpty:'isEmpty'
-            })
+                listedItems: 'listedItemsGetter'
+            }),
+            isListEmpty(){
+                return this.listedItems.length === 0
+            }
         },
         methods: {
-            openToast(e){
-                this.deletedItemTitle = e ;
+            itemDeleted(data){
+                this.deletedItemTitle = data ;
+                this.openToast();
+            },
+            openToast(){
                 this.isToastOpen = true;
                 setTimeout(()=>{
                     this.isToastOpen = false

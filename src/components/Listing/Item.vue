@@ -11,7 +11,7 @@
                 <div class="item-name">{{item.title}}</div>
                 <div class="item-address">{{item.url}}</div>
             </div>
-            <Voter :item="item"/>
+            <Voter @upVoted="upVoteClicked" @downVoted="downVoteClicked"/>
         </div>
         <span class="remover" v-show="isHovered" @click="isModalOpen=true">
             <b-icon icon="dash-circle-fill" variant="danger"/>
@@ -40,6 +40,12 @@
         props: ['item'],
         components: {Modal, Voter},
         methods: {
+            upVoteClicked(){
+                this.$store.dispatch('upVoter', this.item.id);
+            },
+            downVoteClicked(){
+                this.$store.dispatch('downVoter', this.item.id);
+            },
             removeItem(itemId, itemTitle){
                 this.$store.commit('itemRemover',itemId);
                 this.$emit('itemDeleted',itemTitle);

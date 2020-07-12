@@ -14,9 +14,6 @@ export default new Vuex.Store({
   getters: {
     listedItemsGetter(state){
       return state.listedItems
-    },
-    isEmpty(state){
-      return !state.listedItems.length;
     }
   },
   mutations: {
@@ -39,7 +36,7 @@ export default new Vuex.Store({
     },
     loadFromLocalStorage: (state, payload) => {
       if (payload){
-        state.listedItems = JSON.parse(payload);
+        state.listedItems = payload;
       }
     },
     upVoter: (state,itemId) => {

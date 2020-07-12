@@ -49,11 +49,14 @@
                     });
                     this.addedItemsTitle = this.title;
                     this.clearInputs();
-                    this.isSuccess = true;
-                    setTimeout(()=>{
-                        this.isSuccess = false
-                    },2000)
+                    this.showToast();
                 }
+            },
+            showToast(){
+                this.isSuccess = true;
+                setTimeout(()=>{
+                    this.isSuccess = false
+                },2000)
             },
             validateInputs(){
                 if(this.title && this.url){

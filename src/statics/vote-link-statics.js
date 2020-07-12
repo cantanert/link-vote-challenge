@@ -14,7 +14,8 @@ export default {
         removeLink: 'Remove Link',
         sureToRemove: 'Do you want to remove:',
         linkName: 'Link Name:',
-        linkUrl: 'Link URL:'
+        linkUrl: 'Link URL:',
+        deleted: 'deleted'
     },
     buttons:{
         add:'ADD',

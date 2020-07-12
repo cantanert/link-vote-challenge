@@ -1,10 +1,10 @@
 <template>
     <div class="voter-wrapper">
         <div class="up-votter-wrapper">
-            <button @click="upVoteHandler(item.id)"><b-icon-arrow-up-short/>{{statics.buttons.upVote}}</button>
+            <button @click="upVoteHandler()"><b-icon-arrow-up-short/>{{statics.buttons.upVote}}</button>
         </div>
         <div class="down-voter-wrapper">
-            <button @click="downVoteHandler(item.id)" v-show="item.point > 0"><b-icon-arrow-down-short />{{statics.buttons.downVote}}</button>
+            <button @click="downVoteHandler()"><b-icon-arrow-down-short />{{statics.buttons.downVote}}</button>
         </div>
     </div>
 </template>
@@ -19,13 +19,12 @@
                 statics : statics
             }
         },
-        props: ['item'],
         methods:{
-            upVoteHandler(itemId){
-                this.$store.dispatch('upVoter', itemId)
+            upVoteHandler(){
+                this.$emit('upVoted');
             },
-            downVoteHandler(itemId){
-                this.$store.dispatch('downVoter', itemId)
+            downVoteHandler(){
+                this.$emit('downVoted');
             }
         }
     }
