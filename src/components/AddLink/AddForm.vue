@@ -6,9 +6,13 @@
             <h2 class="form-title">{{statics.texts.addNewLink}}</h2>
             <div class="form-inputs">
                 <p class="link-name-title" >{{statics.texts.linkName}}</p>
-                <input  v-model="title" placeholder="e.g Alphabet">
+                <input v-model="title"
+                       placeholder="e.g Alphabet"
+                        :class="(titleError ? 'error' : '')">
                 <p class="link-url-title">{{statics.texts.linkUrl}}</p>
-                <input  v-model="url" placeholder="e.g http.//abc.xyz">
+                <input v-model="url"
+                       placeholder="e.g http.//abc.xyz"
+                       :class="(urlError ? 'error' : '')">
                 <div class="add-button-wrapper">
                     <button @click="addEventHandler">{{statics.buttons.add}}</button>
                 </div>
@@ -28,6 +32,8 @@
           return{
               title: '',
               url: '',
+              titleError: false,
+              urlError:false,
               addedItemsTitle:'',
               isSuccess: false,
               statics: Statics
@@ -36,7 +42,7 @@
         name: "AddForm",
         methods:{
             addEventHandler(){
-                // if(this.validateInputs()){
+                if(this.validateInputs()){
                     this.$store.commit('itemAdder',{
                         title: this.title,
                         url: this.url
@@ -47,11 +53,17 @@
                     setTimeout(()=>{
                         this.isSuccess = false
                     },2000)
-                // }
+                }
             },
-            /*validateInputs(){
-
-            },*/
+            validateInputs(){
+                if(this.title && this.url){
+                    this.titleError = false;
+                    this.urlError = false;
+                    return true;
+                }
+                this.titleError = !this.title;
+                this.urlError = !this.url;
+            },
             clearInputs(){
                 this.title = '';
                 this.url = '';
@@ -80,7 +92,10 @@
                 display: flex
                 flex-direction: column
                 .error
-                    border: 1px solid red
+                    border: 2px solid red
+                    -webkit-box-shadow: 0 0 10px 0 rgba(148,142,148,1)
+                    -moz-box-shadow: 0 0 10px 0 rgba(148,142,148,1)
+                    box-shadow: 0 0 10px 0 rgba(148,142,148,1)
                 p
                     display: flex
                     margin-bottom: 0
