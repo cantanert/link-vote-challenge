@@ -26,5 +26,8 @@
     text-align: center
     color: #2c3e50
     margin-top: 25px
-
+  @media screen and (max-width: 767px)
+    #app
+      padding: 0 15px
+      margin-top: 5px
 </style>

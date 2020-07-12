@@ -58,4 +58,9 @@
     @media screen and (max-width: 767px)
         .item-submitter-wrapper
             width: 100%
+            .plus-wrapper
+                width: 75px
+                height: 75px
+            .submit-title-wrapper
+                font-size: 20px
 </style>

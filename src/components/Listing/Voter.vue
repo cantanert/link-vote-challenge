@@ -40,7 +40,18 @@
                 background-color: unset
                 color: $dark-gray
                 font-weight: 600
+                padding: 0
+                font-size: 15px
                 svg
-                    font-size: 2rem
+                    font-size: 20px
+    @media screen and (max-width: 767px)
+        .voter-wrapper
+            .up-votter-wrapper, .down-voter-wrapper
+                button
+                    font-size: 10px
+                    padding: 0
+                    svg
+                        font-size : 1rem
+
 
 </style>

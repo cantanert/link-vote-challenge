@@ -30,19 +30,31 @@
         border-bottom: 1px solid $header-border-dark-gray
         font-size: 23px
         .logo-wrapper
+            justify-content: flex-start
             flex: 1
             .logo
                 width: 100%
                 padding-bottom: 10px
         .title-wrapper
-            flex: 2
             display: flex
+            flex: 2
             justify-content: flex-end
             align-self: flex-end
             font-weight: 500
-            .link
-                font-weight: 900
-            .vote
-                font-weight: 200
+            .title
+                margin-bottom: 5px
+                .link
+                    font-weight: 900
+                .vote
+                    font-weight: 200
+    @media screen and (max-width: 767px)
+        .header-wrapper
+            .logo-wrapper, .title-wrapper
+                flex: 1
+            .logo-wrapper
+                .logo
+                    padding-bottom: 0
+            .title-wrapper
+                font-size: 10px
 
 </style>

@@ -79,7 +79,6 @@
             border: 1px solid $pure-black
             border-radius: 5px
             line-height: 1.1
-            margin: 10px
             span.point
                 font-weight: 900
                 font-size: 30px
@@ -89,7 +88,6 @@
             flex: 1
             align-items: flex-start
             padding: 0 20px
-            margin: 10px
             justify-content: space-between
             .item-info
                 display: flex
@@ -106,6 +104,22 @@
             top: -10px
             right: -7px
             cursor: pointer
+
+    @media screen and (max-width: 767px)
+        .item
+            .item-details-wrapper, .item-point-wrapper
+                margin: 0
+            .item-details-wrapper
+                padding: 0 10px
+                .item-info
+                    .item-name
+                        font-size: 20px
+                    .item-address
+                        font-size: 12px
+            .item-point-wrapper
+                width: 75px
+                height: 75px
+
 
 
 </style>

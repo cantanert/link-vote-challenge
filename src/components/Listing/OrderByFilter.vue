@@ -27,6 +27,10 @@
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="sass">
+    .order-by-filter-wrapper
+        width: 50%
+    @media screen and (max-width: 767px)
+        .order-by-filter-wrapper
+            width: 100%
 </style>
