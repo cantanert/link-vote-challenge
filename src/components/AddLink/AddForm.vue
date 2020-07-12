@@ -113,4 +113,8 @@
         .add-form-wrapper
             .add-form
                 width: 100%
+                .form-inputs
+                    .add-button-wrapper
+                        button
+                            width: 100%
 </style>

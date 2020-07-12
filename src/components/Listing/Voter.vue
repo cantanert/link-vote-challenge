@@ -46,9 +46,11 @@
                     font-size: 20px
     @media screen and (max-width: 767px)
         .voter-wrapper
+            justify-content: space-between
             .up-votter-wrapper, .down-voter-wrapper
+                flex: unset
                 button
-                    font-size: 10px
+                    font-size: 16px
                     padding: 0
                     svg
                         font-size : 1rem
