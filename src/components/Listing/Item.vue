@@ -38,7 +38,11 @@
             }
         },
         name: "Item",
-        props: ['item'],
+        props: {
+            item: {
+                type: Object
+            }
+        },
         components: {Modal, Voter},
         methods: {
             upVoteClicked(){

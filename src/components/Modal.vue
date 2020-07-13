@@ -28,7 +28,14 @@
               statics : statics
           }
         },
-        props: ['title','isVisible'],
+        props: {
+            title: {
+                type: String
+            },
+            isVisible: {
+                type: Boolean
+            }
+        },
         methods: {
             approveDeletion(){
                 this.$emit(enums.emits.deleteApproved);

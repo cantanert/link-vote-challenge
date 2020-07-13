@@ -15,10 +15,7 @@
 
 <script>
     export default {
-        name: "Header",
-        computed: {
-
-        }
+        name: "Header"
     }
 </script>
 

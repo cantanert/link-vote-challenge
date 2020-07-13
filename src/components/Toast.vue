@@ -9,7 +9,14 @@
 <script>
     export default {
         name: "Toast",
-        props:['items', 'actionTitle']
+        props: {
+            items: {
+                type: Array
+            },
+            actionTitle:{
+                type: String
+            }
+        }
     }
 </script>
 

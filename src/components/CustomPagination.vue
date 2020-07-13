@@ -31,7 +31,17 @@
 <script>
     export default {
         name: "CustomPagination",
-        props:['totalPages', 'currentPage', 'maxButtonCount'],
+        props:{
+            totalPages:{
+                type: Number
+            },
+            currentPage:{
+                type: Number
+            },
+            maxButtonCount:{
+                type: Number
+            }
+        },
         computed: {
             startPage() {
                 if (this.totalPages <= this.maxButtonCount){
