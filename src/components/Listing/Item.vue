@@ -1,7 +1,7 @@
 <template>
     <div class="item"
-         @mouseover="isHovered = true"
-         @mouseleave="isHovered = false">
+         @mouseover="(!isMobile) ? isHovered = true : null"
+         @mouseleave="(!isMobile) ? isHovered = false : null">
         <div class="item-point-wrapper">
             <span class="point">{{item.point}}</span>
             <span>{{statics.texts.points}}</span>
@@ -13,7 +13,7 @@
             </div>
             <Voter @upVoted="upVoteClicked" @downVoted="downVoteClicked"/>
         </div>
-        <span class="remover" v-show="isHovered" @click="isModalOpen=true">
+        <span class="remover" v-show="(isMobile) ? true : isHovered" @click="isModalOpen=true">
             <b-icon icon="dash-circle-fill" variant="danger"/>
         </span>
         <Modal :isVisible="isModalOpen"
@@ -28,12 +28,14 @@
     import Modal from "../Modal";
     import statics from '../../statics/vote-link-statics';
     import enums from '../../statics/enums';
+    import scrolltop from "../../utils/scrollTop";
 
     export default {
         data(){
             return{
                 isHovered: false,
                 isModalOpen: false,
+                isMobile: false,
                 statics: statics
             }
         },
@@ -57,11 +59,15 @@
                 this.closeModal();
             },
             closeModal(){
-              this.isModalOpen = false;
+                scrolltop();
+                this.isModalOpen = false;
+            },
+            isMobileChecker(){
+                this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
             }
         },
-        computed: {
-
+        created() {
+            this.isMobileChecker();
         }
     }
 </script>
@@ -130,6 +136,9 @@
 
     @media screen and (max-width: 767px)
         .item
+            border: 1px solid $gray-box-background
+            &:hover
+                background-color: unset
             .item-details-wrapper, .item-point-wrapper
                 margin: 0
             .item-details-wrapper
@@ -142,6 +151,9 @@
             .item-point-wrapper
                 width: 75px
                 height: 75px
+            .remover
+                top: -7px
+                right: -7px
 
 
 

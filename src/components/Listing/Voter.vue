@@ -33,6 +33,7 @@
 
 <style scoped lang="sass">
     $dark-gray: #828282
+    $pure-black: #000
 
     .voter-wrapper
         display: flex
@@ -50,6 +51,9 @@
                 font-weight: 600
                 padding: 0
                 font-size: 15px
+                outline: none
+                &:active
+                    color: $pure-black
                 svg
                     font-size: 20px
     @media screen and (max-width: 767px)

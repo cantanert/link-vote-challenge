@@ -1,5 +1,5 @@
 <template>
-    <div class="toast-added">
+    <div class="toast-added" id="toaster">
         <div :key="item" v-for="item of items" class="toast-item">
             <span>{{item}}</span> {{actionTitle}}.
         </div>

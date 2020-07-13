@@ -26,7 +26,7 @@
     import ReturnLink from "./ReturnLink";
     import Statics from '../../statics/vote-link-statics'
     import enums from '../../statics/enums'
-
+    import scrolltop from "../../utils/scrollTop";
     export default {
         components: {ReturnLink, Toast},
         data(){
@@ -57,7 +57,8 @@
                 this.toastItems.push(this.addedItemsTitle);
                 setTimeout(()=>{
                     this.toastItems.splice(0,1);
-                },2000)
+                },2000);
+                scrolltop();
             },
             validateInputs(){
                 if(this.title && this.url){

@@ -96,4 +96,12 @@
                     background-color: $pure-black
                     color: $pure-white
                     font-weight: 700
+    @media screen and (max-width: 767px)
+        .custom-modal-overlay
+            .custom-modal-container
+                width: 75%
+                .custom-modal-actions
+                    button
+                        height: 50px
+
 </style>
