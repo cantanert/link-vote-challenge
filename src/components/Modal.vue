@@ -1,5 +1,5 @@
 <template>
-    <div class="custom-modal-overlay">
+    <div class="custom-modal-overlay" v-if="isVisible">
         <div class="custom-modal-container">
             <div class="custom-modal-header">
                 <span>{{statics.texts.removeLink}}</span>
@@ -10,8 +10,8 @@
                 <p>{{title}}</p>
             </div>
             <div class="custom-modal-actions">
-                <button @click="approveDeletion">{{statics.buttons.ok}}</button>
-                <button @click="declineDeletion">{{statics.buttons.cancel}}</button>
+                <button id="ok" @click="approveDeletion">{{statics.buttons.ok}}</button>
+                <button id="cancel" @click="declineDeletion">{{statics.buttons.cancel}}</button>
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@
               statics : statics
           }
         },
-        props: ['title'],
+        props: ['title','isVisible'],
         methods: {
             approveDeletion(){
                 this.$emit(enums.emits.deleteApproved);

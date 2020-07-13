@@ -1,6 +1,6 @@
 <template>
     <div class="toast-added">
-        <div :key="item" v-for="item of items">
+        <div :key="item" v-for="item of items" class="toast-item">
             <span>{{item}}</span> {{actionTitle}}.
         </div>
     </div>

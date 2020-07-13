@@ -16,7 +16,7 @@
         <span class="remover" v-show="isHovered" @click="isModalOpen=true">
             <b-icon icon="dash-circle-fill" variant="danger"/>
         </span>
-        <Modal v-show="isModalOpen"
+        <Modal :isVisible="isModalOpen"
                :title="item.title"
                @deleteDeclined="closeModal"
                @deleteApproved="removeItem(item.id, item.title)"/>
