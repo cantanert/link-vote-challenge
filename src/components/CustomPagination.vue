@@ -102,5 +102,10 @@
             background-color: unset
             border: none
             font-weight: 900
+    @media screen and (max-width: 767px)
+        .pagination
+            button
+                font-size: 25px
+                padding: 10px
 
 </style>
