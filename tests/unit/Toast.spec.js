@@ -9,13 +9,13 @@ describe('Toast.vue', () => {
         }
     });
 
-    it('should not rendered without props ', function () {
+    it('should not rendered without props ',() => {
         let wrapper = shallowMount(component);
         let renderedItems = wrapper.findAll('.toast-item');
         expect(renderedItems.length === 0).toBeTruthy();
     });
 
-    it('should render text with given props', function () {
+    it('should render text with given props', () => {
         let renderedItem = wrapper.find('.toast-item');
         expect(renderedItem.text()).toBe('Stack Overflow deleted.');
     });

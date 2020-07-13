@@ -1,13 +1,14 @@
 <template>
     <ul class="pagination">
-        <li class="pagination-item">
-            <button type="button"
+        <li class="pagination-item" >
+            <button id="previous-button"
+                    type="button"
                     @click="onClickPreviousPage"
                     :disabled="isInFirstPage">
                 <b-icon icon="chevron-left"/>
             </button>
         </li>
-        <li v-bind:key="page.name" v-for="page in pages" class="pagination-item">
+        <li v-bind:key="page.name" v-for="page in pages" class="pagination-item page-button">
             <button type="button"
                     @click="onClickPage(page.name)"
                     :disabled="page.isDisabled"
@@ -16,7 +17,8 @@
             </button>
         </li>
         <li class="pagination-item">
-            <button type="button"
+            <button id="next-button"
+                    type="button"
                     @click="onClickNextPage"
                     :disabled="isInLastPage"
                     aria-label="Go to next page">
@@ -28,11 +30,6 @@
 
 <script>
     export default {
-        data(){
-            return {
-                activePage: 1,
-            }
-        },
         name: "CustomPagination",
         props:['totalPages', 'currentPage', 'maxButtonCount'],
         computed: {

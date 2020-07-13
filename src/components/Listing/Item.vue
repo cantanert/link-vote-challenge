@@ -116,7 +116,7 @@
             display: flex
             align-items: center
             font-size: 1.5rem
-            top: -19px
+            top: -14px
             right: -13px
             cursor: pointer
             border-radius: 50%
