@@ -71,8 +71,10 @@
         display: flex
         flex: 1
         margin-top: 15px
-        margin-bottom: 20px
+        margin-bottom: 5px
+        padding: 10px
         position: relative
+        border: 1px solid transparent
         &:hover
             border-radius: 5px
             border: 1px solid $gray-box-background
@@ -111,9 +113,16 @@
                     font-weight: 700
         .remover
             position: absolute
-            top: -10px
-            right: -7px
+            display: flex
+            align-items: center
+            font-size: 1.5rem
+            top: -19px
+            right: -13px
             cursor: pointer
+            border-radius: 50%
+            -webkit-box-shadow: 0 0 11px -1px rgba(117,111,117,1)
+            -moz-box-shadow: 0 0 11px -1px rgba(117,111,117,1)
+            box-shadow: 0 0 11px -1px rgba(117,111,117,1)
 
     @media screen and (max-width: 767px)
         .item

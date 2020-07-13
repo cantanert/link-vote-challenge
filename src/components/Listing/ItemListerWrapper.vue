@@ -20,10 +20,11 @@
     .item-lister-wrapper
         width: 50%
         margin-top: 25px
-        padding: 15px 10px
+        padding: 15px 0
         border-top: 3px solid $gray-box-background
 
     @media screen and (max-width: 767px)
         .item-lister-wrapper
             width: 100%
+            padding: 15px 10px
 </style>

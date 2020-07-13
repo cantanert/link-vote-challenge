@@ -11,7 +11,7 @@
                 :total-pages="paginationCount"
                 :current-page="currentPage"
                 :max-button-count="maxButtonCount"
-        @pageChanged="paginated"/>
+        @pageChanged="onPaginated"/>
     </div>
 </template>
 
@@ -58,9 +58,16 @@
             }
         },
         methods: {
+            onPaginated(newPage){
+                this.currentPage = newPage;
+            },
             itemDeleted(data){
+                this.backPreviousPageIfAvailable();
                 this.deletedItemTitle = data ;
                 this.openToast();
+            },
+            backPreviousPageIfAvailable(){
+                if(this.isListEmpty && this.currentPage > 1) this.currentPage--;
             },
             openToast(){
                 this.isToastOpen = true;
@@ -68,9 +75,6 @@
                     this.isToastOpen = false
                 },2000)
             },
-            paginated(newPage){
-                this.currentPage = newPage;
-            }
         },
     }
 </script>

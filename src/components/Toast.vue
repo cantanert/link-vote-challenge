@@ -18,6 +18,7 @@
     .toast-added
         display: flex
         justify-content: center
+        z-index: 1
         div
             position: fixed
             top: 50px
