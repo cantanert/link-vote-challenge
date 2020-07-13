@@ -1,5 +1,7 @@
 # link-vote-challenge
 
+## Live Preview : https://cantanert.github.io/link-vote-challenge/
+
 ## Project setup
 ```
 npm install
