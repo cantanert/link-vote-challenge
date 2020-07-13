@@ -1,6 +1,6 @@
 <template>
     <div class="item-lister">
-        <Toast :visibility="isToastOpen" :text="deletedItemTitle" :action="statics.texts.deleted"/>
+        <Toast :items="toastItems" :action-title="statics.texts.deleted"/>
         <Item v-for="(item,index) in paginatedData"
               :item='item'
               :key="index"
@@ -27,8 +27,8 @@
     export default {
         data(){
             return {
-                isToastOpen: false,
                 deletedItemTitle: '',
+                toastItems: [],
                 currentPage: 1,
                 maxButtonCount: 5,
                 paginationLimit: 5,
@@ -70,10 +70,10 @@
                 if(this.isListEmpty && this.currentPage > 1) this.currentPage--;
             },
             openToast(){
-                this.isToastOpen = true;
+                this.toastItems.push(this.deletedItemTitle);
                 setTimeout(()=>{
-                    this.isToastOpen = false
-                },2000)
+                    this.toastItems.splice(0,1);
+                },2000);
             },
         },
     }

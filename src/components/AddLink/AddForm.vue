@@ -1,7 +1,7 @@
 <template>
     <div class="add-form-wrapper">
         <div class="add-form">
-            <Toast :visibility="isSuccess" :text="addedItemsTitle" :action="'added'"/>
+            <Toast :items="toastItems" :action-title="statics.texts.added"/>
             <ReturnLink :text="statics.texts.returnToList" url="/"/>
             <h2 class="form-title">{{statics.texts.addNewLink}}</h2>
             <div class="form-inputs">
@@ -36,7 +36,7 @@
               titleError: false,
               urlError:false,
               addedItemsTitle:'',
-              isSuccess: false,
+              toastItems: [],
               statics: Statics
           }
         },
@@ -54,9 +54,9 @@
                 }
             },
             showToast(){
-                this.isSuccess = true;
+                this.toastItems.push(this.addedItemsTitle);
                 setTimeout(()=>{
-                    this.isSuccess = false
+                    this.toastItems.splice(0,1);
                 },2000)
             },
             validateInputs(){

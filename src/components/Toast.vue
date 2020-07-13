@@ -1,13 +1,15 @@
 <template>
-    <div v-show="visibility" class="toast-added">
-        <div><span>{{text}}</span> {{action}}.</div>
+    <div class="toast-added">
+        <div :key="item" v-for="item of items">
+            <span>{{item}}</span> {{actionTitle}}.
+        </div>
     </div>
 </template>
 
 <script>
     export default {
         name: "Toast",
-        props:['visibility','text', 'action']
+        props:['items', 'actionTitle']
     }
 </script>
 

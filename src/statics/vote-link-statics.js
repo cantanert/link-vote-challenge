@@ -10,7 +10,8 @@ export default {
         sureToRemove: 'Do you want to remove:',
         linkName: 'Link Name:',
         linkUrl: 'Link URL:',
-        deleted: 'deleted'
+        deleted: 'deleted',
+        added: 'added'
     },
     buttons:{
         add:'ADD',
