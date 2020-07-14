@@ -60,7 +60,8 @@
         display: flex
         justify-content: center
         align-items: center
-        background-color: rgba(0, 0, 0, 0.6)
+        background: rgb(107,105,105);
+        background: radial-gradient(circle, rgba(107,105,105,0.8673844537815126) 0%, rgba(4,4,4,0.6825105042016807) 77%);
         z-index: 1
         .custom-modal-container
             width: 50%
@@ -92,6 +93,7 @@
                 justify-content: space-around
                 button
                     width: 100px
+                    height: 50px
                     border-radius: 50px
                     background-color: $pure-black
                     color: $pure-white
@@ -100,8 +102,8 @@
         .custom-modal-overlay
             .custom-modal-container
                 width: 75%
-                .custom-modal-actions
-                    button
-                        height: 50px
-
+    @media screen and (min-width: 1200px)
+        .custom-modal-overlay
+            .custom-modal-container
+                width: 30%
 </style>
